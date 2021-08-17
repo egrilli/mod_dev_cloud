@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block titulo %} Sistema de Gestion Open Buy{% endblock %}
+{% block contenido %}
+{% include "nav.html" %}
+<div class="container">
+  <h1 class="text-center py-4">Sistema de Gestion Open Buy</h1>
+
+  <h4>Usuario Logeado</h4>
+  <h5>ID: {{request.session.usuario.id}} </h5>
+  <h5>Usuario: {{request.session.usuario.name}} </h5>
+  <h5>Correo: {{request.session.usuario.email}} </h5>
+  <h5>Rol: {{request.session.usuario.rol}} </h5>
+
+  <hr>
+  <hr>
+
+  
+
+</div>
+<br>
+{% endblock %}

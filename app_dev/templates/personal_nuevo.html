@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ingreso de Personal </title>
+    {% load static %}
+    <link rel="icon" type="image/png" href="{% static 'images/icons/openbuy.png' %}" />
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'register/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'register/css/style.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/toastr.min.css' %}">
+
+
+    <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/toastr.min.js' %}"></script>
+    <script src="{% static 'js/moment-with-locales.min.js' %}"></script>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            moment.locale("es");
+
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+            }
+
+            {% if messages %}
+                {% for message in messages %}
+                    toastr.{{ message.tags }}("{{message}}");
+                {% endfor %}
+            {% endif %}
+
+
+            {% block cargar %} {% endblock %}
+
+        });
+
+    </script>
+
+
+
+
+
+</head>
+<body>
+
+    <div class="main my-3">
+
+        <section class="signup  ">
+            <div class="container ">
+                <div class="signup-content col-6 justify-content-center">
+                    <form  action="" method="POST" id="signup-form" class="signup-form">
+                        {% csrf_token %}
+                        <h2 class="form-title">Ingreso de Personal </h2>
+                        <br>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="first_name" placeholder="Nombre" value="{{request.session.register_name}}"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="last_name" placeholder="Apellido" value="{{request.session.register_last_name}}"/>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="rut" placeholder="Rut" value="{{request.session.register_rut}}"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for=""> Fecha de Nacimiento</label>
+                            <input type="date" class="form-input" name="birdth_date" placeholder="Fecha de Nacimiento" value="{{request.session.register_birdth}}" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for=""> Fecha de ingreso empresa</label>
+                            <input type="date" class="form-input" name="entry_date" placeholder="Fecha de Entrada" value="{{request.session.register_entry}}" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="position" placeholder="Cargo" value="{{request.session.register_position}}"/>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="phone" placeholder="Celular" value="{{request.session.register_phone}}"/>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-input" name="email" placeholder="Email" value="{{request.session.register_email}}"/>
+                        </div>
+
+                        <label>Bodega de Ingreso:</label>
+                        <select  class="custom-select my-1 mr-sm-2" name="warehouse_work" value="{{request.session.register_warehouse}}">
+                            {% for warehouse in warehouses %}
+                                <option value="{{warehouse.id}}">{{warehouse.name}}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
+                        <br>
+
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="CREAR"/>
+                        </div>
+                    </form>
+                    <p class="loginhere">
+                        Desesas volver al Panel? <a href="/administrador" class="loginhere-link">Panel Aqui!</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'register/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'register/js/main.js' %}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

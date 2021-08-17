@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block titulo %} PANEL DE SISTEMA {% endblock %}
+{% block contenido %}
+{% include "nav.html" %}
+<div class="container">
+    <h1 class="text-center py-4">Administración </h1>
+
+    <div class="row ">
+        <div class="col-6">
+            <a href="/administrador/usuario"><button type="button" class="btn btn-primary btn-lg btn-block "> Ver
+                    Usuarios</button></a>
+        </div>
+
+        <div class="col-6">
+
+            <a href="/administrador/registro"><button type="button" class="btn btn-primary btn-lg btn-block ">Crear
+                    Usuario</button></a>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-6">
+            <a href="/administrador/bodega"><button type="button" class="btn btn-primary btn-lg btn-block"> Ver
+                    Bodegas
+                </button></a>
+        </div>
+        <div class="col-6">
+            <a href="/administrador/bodega/crear"><button type="button" class="btn btn-primary btn-lg btn-block">Crear
+                    Bodega</button></a>
+
+        </div>
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-6">
+            <a href="/administrador/cliente"><button type="button" class="btn btn-primary btn-lg btn-block">Ver
+                    Clientes</button></a>
+        </div>
+        <div class="col-6">
+            <a href="/administrador/cliente/crear"><button type="button" class="btn btn-primary btn-lg btn-block">Crear
+                    Cliente</button></a>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-6">
+            <a href="/administrador/personal"><button type="button" class="btn btn-primary btn-lg btn-block">Ver 
+                    Personal</button></a>
+        </div>
+        <div class="col-6">
+            <a href="/administrador/personal/crear"><button type="button" class="btn btn-primary btn-lg btn-block">Crear
+                    Personal</button></a>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Sistema de Gestion Open Buy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
+            <li class="nav-item active">
+                <a class="nav-link" href="/panel">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                    data-toggle="dropdown" aria-expanded="false">
+                    PORTAL ADMINISTRACION
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                    <li><a class="dropdown-item" href="/administrador">Administracion </a></li>
+                    <li><a class="dropdown-item" href="/reporte">Reporte</a></li>
+                    <li><a class="dropdown-item" href="/inversa"> Ingreso Devolucion</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                    data-toggle="dropdown" aria-expanded="false">
+                    PORTAL SUCURSALES
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                    <li><a class="dropdown-item" href="/bodega/temuco">Temuco</a></li>
+                    <li><a class="dropdown-item" href="/bodega/osorno"> Osorno</a></li>
+                    <li><a class="dropdown-item" href="/bodega/puerto-montt"> Puerto Montt</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+        <a href="/logout" type="button" class="btn btn-dark float-right">Cerrar Sesion</a>
+    </div>
+</nav>

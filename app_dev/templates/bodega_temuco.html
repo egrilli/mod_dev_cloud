@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block titulo %} Open Buy{% endblock %}
+{% block contenido %}
+{% include "nav.html" %}
+<div class="container">
+    <h1 class="text-center py-4">BODEGA TEMUCO ADMINISTRACION</h1>
+
+    <div class="row ">
+        <div class="col-4">
+            <a href="#"><button type="button" class="btn btn-primary btn-lg btn-block "> Crear TIM</button></a>
+        </div>
+
+        <div class="col-4">
+            <a href="/bodega/temuco/data/devolucion"><button type="button"
+                    class="btn btn-primary btn-lg btn-block ">Data Devoluciones</button></a>
+        </div>
+
+        <div class="col-4">
+            <a href="#"><button type="button" class="btn btn-primary btn-lg btn-block ">Otros</button></a>
+        </div>
+    </div>
+
+    <div class="row py-4">
+        <div class="col-4">
+            <a href="/bodega/temuco/cargos"><button type="button" class="btn btn-primary btn-lg btn-block ">
+                    Cargos</button></a>
+        </div>
+
+        <div class="col-4">
+            <a href="/bodega/temuco/data-general"><button type="button" class="btn btn-primary btn-lg btn-block "> Data
+                    Global</button></a>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+{% endblock %}

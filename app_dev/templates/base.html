@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}{% endblock %} </title>
+    {% load static %}
+    <link rel="icon" type="image/png" href="{% static 'images/icons/openbuy.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/toastr.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tipped.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/datatables.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+
+
+    <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/toastr.min.js' %}"></script>
+    <script src="{% static 'js/moment-with-locales.min.js' %}"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+          
+            moment.locale("es");
+
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+            }
+
+            {% if messages %}
+                {% for message in messages %}
+                    toastr.{{ message.tags }}("{{message}}");
+                {% endfor %}
+            {% endif %}
+
+
+            {% block cargar %} {% endblock %}
+        });
+
+
+        $(document).ready(function () {
+            $('#ejemplo').DataTable();
+        });
+
+
+        $(document).ready(function () {
+            var myCustomScrollbar = document.querySelector('.my-custom-scrollbar');
+            var ps = new PerfectScrollbar(myCustomScrollbar);
+
+            var scrollbarY = myCustomScrollbar.querySelector('.ps__rail-y');
+
+            myCustomScrollbar.onscroll = function () {
+                scrollbarY.style.cssText = `top: ${this.scrollTop}px!important; height: 400px; right: ${-this.scrollLeft}px`;
+            }
+
+        });
+
+
+
+
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+
+    {% block contenido %} {% endblock %}
+
+
+</body>
+
+</html>

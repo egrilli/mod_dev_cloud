@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block titulo %} PANEL DE SISTEMA {% endblock %}
+{% block contenido %}
+{% include "nav.html" %}
+<div class="container  py-3">
+	<h1 class="text-left py-3 text-center">Bodegas</h1>
+	<div class="theadColor py-3 px-3 ">
+		<div class="my-custom-scrollbar my-custom-scrollbar-primary">
+			<table id="ejemplo" class="display nowrap dataTable dtr-inline collapsed text-center">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Bodega</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for warehouse in warehouses %}
+					<tr>
+						<th>{{warehouse.id}}</th>
+						<th>{{warehouse.name}}</th>
+					</tr>
+					{% endfor %}
+				</tbody>
+
+
+			</table>
+			<a href="/administrador"><button type="button" class="btn btn-dark"> Volver</button></a>
+		</div>
+	</div>
+</div>
+{% endblock %}

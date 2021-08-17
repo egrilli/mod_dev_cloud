@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block titulo %} Libros Favoritos{% endblock %}
+{% block contenido %}
+{% include "nav.html" %}
+<div class="container">
+    <h1 class="text-center py-4">SISTEMA DE DEVOLUCION</h1>
+
+    <div class="row ">
+
+        <div class="col-4">
+            <a href="/inversa/cargo"><button type="button" class="btn btn-primary btn-lg btn-block "> Historico Cargos</button></a>
+        </div>
+
+        <div class="col-4">
+            <a href="/inversa/data"><button type="button" class="btn btn-primary btn-lg btn-block "> Ver
+                    Data General Devoluciones</button></a>
+        </div>
+
+        <div class="col-4">
+
+            <a href="/inversa/data/registro"><button type="button" class="btn btn-primary btn-lg btn-block ">
+                    Ingresar Guia para Devolucion</button></a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

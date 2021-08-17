@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+{% block titulo %} PANEL DE SISTEMA {% endblock %}
+{% block contenido %}
+{% include "nav.html" %}
+<div class="container  py-3">
+    <h1 class="text-left py-3 text-center"> Editar Guia {{order.order_number}} </h1>
+
+    <a href="/inversa/guia/{{order.id}}"><button type="button" class="btn btn-dark"> Ver Guia</button></a>
+    <a href="/inversa/data"><button type="button" class="btn btn-dark"> Volver a Resumen</button></a>
+    <br>
+    <br>
+    <div class="theadColor py-3 px-3 ">
+        <div class="my-custom-scrollbar my-custom-scrollbar-primary">
+            <form action="" method="POST" id="signup-form" class="signup-form">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-2">
+                        <label for=""> Cliente</label>
+                        <input class="form-control" type="text" value="{{order.company_delivery}}" disabled>
+                    </div>
+
+                    <div class="col-2">
+                        <label for=""> Bodega Fisica</label>
+                        <select class="custom-select my-1 mr-sm-2" name="warehouse_delivery"
+                            value="{{order.warehouse_delivery}}">
+                            {% for warehouse in warehouses %}
+                            {% if order.warehouse_delivery.id == warehouse.id %}
+                            <option value="{{warehouse.id}}" selected>{{warehouse.name}}</option>
+                            {% else %}
+                            <option value="{{warehouse.id}}">{{warehouse.name}}</option>
+                            {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <label for=""> Bodega Origen</label>
+                        <input class="form-control" type="text" value="{{order.warehouse_origin}}"
+                            name="warehouse_origin" disabled>
+                    </div>
+
+                    <div class="col-2">
+                        <label for=""> Fecha Guia</label>
+                        <input class="form-control" type="text" value="{{order.date_issue}}" disabled>
+                    </div>
+
+                    <div class="col-2">
+                        <label for=""> Guia Original</label>
+                        <input class="form-control" type="text" value="{{order.origin_order}}" disabled>
+                    </div>
+
+                    <div class="col-2">
+                        <label for=""> Numero de Guia</label>
+                        <input class="form-control" type="text" value="{{order.order_number}}" disabled>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-2">
+                        <label for=""> Numero Boleta </label>
+                        <input class="form-control" type="text" value="{{order.ticket_number}}" disabled>
+                    </div>
+
+                    <div class="col-2">
+                        <label for=""> Tipo de Orden</label>
+                        <input class="form-control" type="text" value="{{order.type_order}}" disabled>
+                    </div>
+
+                    <div class="col-3">
+                        <label for=""> Estado</label>
+                        <input class="form-control" type="text" value="{{order.state.beetrack_state}}" disabled>
+                    </div>
+
+                    <div class="col-2">
+                        <label for=""> Sub Estado</label>
+                        <input class="form-control" type="text" value="{{order.state.beetrack_substate}}" disabled>
+                    </div>
+
+                    <div class="col-2">
+                        <label for=""> Comentario </label>
+                        <input class="form-control" type="text" value="{{order.state.beetrack_comment}}" disabled>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-2">
+                        <label for=""> Motivo </label>
+                        <input class="form-control" type="text" value="{{order.state.dev_reason}}" disabled>
+                    </div>
+
+                    <div class="col-2">
+                        <label for=""> Condicion</label>
+                        <input class="form-control" type="text" value="{{order.state.dev_condition}}" disabled>
+                    </div>
+
+                    <div class="col-2">
+                        <label for=""> Producto</label>
+                        <input class="form-control" type="text" value="{{order.product}}" disabled>
+                    </div>
+
+                    <div class="col-3">
+                        <label for=""> Cantidad</label>
+                        <input class="form-control" type="text" value="{{order.quantity}}" disabled>
+                    </div>
+
+                    <div class="col-3">
+                        <label for=""> Bultos</label>
+                        <input class="form-control" type="text" value="{{order.number_packager}}" disabled>
+                    </div>
+
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-2">
+                        <label for=""> SKU/PLU</label>
+                        <input class="form-control" type="text" value="{{order.sku}}" disabled>
+                    </div>
+
+                    <div class="col-2">
+                        <label for=""> Fecha Retorno CT</label>
+                        <input class="form-control" type="text"  value="{{order.state.date_return|date:'d-m-Y'}}">
+                    </div>
+
+                    <div class="col-2">
+                        <label for=""> N.Retorno Fecha</label>
+                        <input class="form-control" type="date" name="date_return" value="{{order.state.date_return|date:'Y-m-d'}}">
+                    </div>
+
+                    <div class="col-3">
+                        <label for=""> Estado Retorno</label>
+                        <select class="custom-select my-1 mr-sm-2" name="dev_state"
+                            value="{{request.session.register_warehouse}}">
+                            {% for value,text in devStates %}
+                            {% if order.state.dev_state == value %}
+                            <option value="{{value}}" selected>{{text}}</option>
+                            {% else %}
+                            <option value="{{value}}">{{text}}</option>
+                            {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="col-2">
+                        <label for=""> Com Devolucion</label>
+                        <input class="form-control" type="text"  name="dev_comment">
+                    </div>
+
+
+                </div>
+                <br>
+                <div class="row">
+
+                    <div class="col-3">
+                        <label for=""> Registro Subido por:</label>
+                        <input class="form-control" type="text" value="{{order.created_by}}" disabled>
+                    </div>
+
+                    <div class="col-3">
+                        <label for=""> Registro creado el:</label>
+                        <input class="form-control" type="text" value="{{order.created_at}}" disabled>
+                    </div>
+
+                    <div class="col-3">
+                        <label for=""> Registro Actualizado el</label>
+                        <input class="form-control" type="text" value="{{order.updated_at}}" disabled>
+                    </div>
+                    <div class="col-2">
+                        <label for=""> Actualizar Cambios</label>
+                        <button type="submit" name="submit" id="submit" class="btn btn-primary" value="CREAR">Guardar
+                        </button>
+
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <h2 class="text-center">Historial</h2>
+                    <br>
+                
+                {% for x  in order.record %}
+                    {% for key,value  in x.items %}
+                    <ul> <li><h5>{{key}} : {{value}} </h5></li></ul>
+                    {% endfor %}
+                    <hr style="width: 100%; color: black; height: 1px; background-color:black;" > 
+                {% endfor %}     
+                
+    
+    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
