@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-c+y^z#og$=f85v#$n#$9w@+##3-p8mnmnzzzjh_nwn_$6&e49u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.19.234.8']
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'mod_dev.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bd_opentrace',
+        'USER': 'egrilli',
+        'PASSWORD':'Xkisj220*9291s1*',
+        'HOST':'localhost',
+        'PORT':'3306',
     }
 }
 
@@ -124,3 +128,5 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
