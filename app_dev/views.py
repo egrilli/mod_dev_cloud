@@ -11,7 +11,8 @@ def index(request):
 
     return render(request, 'index.html')
 
-
+@login_required
+@val_admin
 def registro(request):
     if request.method == "POST":
         errors = User.objects.validador_basico(request.POST)
