@@ -41,7 +41,7 @@ reason = [
     ('Rechazo Px danado','Rechazo Px danado'),
     ('Decision Comercial','Decision Comercial'),
     ('Desiste Compra','Desiste Compra'),
-    ('No Aplica','No Aplica)
+    ('No Aplica','No Aplica')
     
 ]
 
