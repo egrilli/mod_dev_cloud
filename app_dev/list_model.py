@@ -15,6 +15,7 @@ state = [
 
 
 sub_state = [
+    ('Conforme','Conforme'),
     ('Domicilio sin moradores','Domicilio sin moradores'),
     ('Domicilio no corresponde','Domicilio no corresponde'),
     ('Cliente Anula Compra','Cliente Anula Compra'),
@@ -39,7 +40,9 @@ reason = [
     ('Rechazo Px no Corresponde','Rechazo Px no Corresponde'),
     ('Rechazo Px danado','Rechazo Px danado'),
     ('Decision Comercial','Decision Comercial'),
-    ('Desiste Compra','Desiste Compra')
+    ('Desiste Compra','Desiste Compra'),
+    ('No Aplica','No Aplica)
+    
 ]
 
 
@@ -48,6 +51,7 @@ condition = [
     ('Emalaje Incompleto Px Noble','Emalaje Incompleto Px Noble'),
     ('Sin Embalaje Px Noble','Sin Embalaje Px Noble'),
     ('Estado Px a todo evento','Estado Px a todo evento'),
+    ('No Aplica','No Aplica)
 ]
 
 dev_state = [
@@ -56,6 +60,7 @@ dev_state = [
     ('Solo Guia - Rechazo no cumple condicion','Solo Guia - Rechazo no cumple condicion'),
     ('En Bodega CT Sucursal','En Bodega CT Sucursal'),
     ('En Bodega CT Temuco','En Bodega CT Temuco'),
+    ('En Bodega CT Ercilla','En Bodega CT Ercilla'),
     ('En Reparacion','En Reparacion'),
     ('Enviado a CD','Enviado a CD'),
     ('Aceptado CD - Cerrado','Aceptado CD - Cerrado'),
