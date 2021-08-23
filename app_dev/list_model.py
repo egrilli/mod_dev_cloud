@@ -51,7 +51,7 @@ condition = [
     ('Emalaje Incompleto Px Noble','Emalaje Incompleto Px Noble'),
     ('Sin Embalaje Px Noble','Sin Embalaje Px Noble'),
     ('Estado Px a todo evento','Estado Px a todo evento'),
-    ('No Aplica','No Aplica)
+    ('No Aplica','No Aplica')
 ]
 
 dev_state = [
