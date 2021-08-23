@@ -3,7 +3,6 @@ company = [
     ('2','Hites'),
     ('3','La Polar')
 ]
-asdas
 
 state = [
     ('Entregado','Entregado'),
