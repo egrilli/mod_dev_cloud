@@ -255,7 +255,6 @@ def personal(request):
 
 
 @login_required
-@val_admin
 def inversa(request):
 
     return render(request, 'devolucion_panel.html')
@@ -279,10 +278,7 @@ def infCargo(request):
 
 
 @login_required
-@val_admin
 def newIorder(request):
-
-
 
     context = {
         'warehouses': Warehouse.objects.all(),
@@ -309,18 +305,9 @@ def newIorder(request):
             request.session['register_order_number'] =  request.POST['order_number']
             request.session['register_ticket_number'] =  request.POST['ticket_number']
             request.session['register_type_order'] =  request.POST['type_order']
-            request.session['register_state'] =  request.POST['state']
-            request.session['register_sub_state'] =  request.POST['sub_state']
-            request.session['register_comment'] =  request.POST['comment']
-            request.session['register_reason'] =  request.POST['reason']
-            request.session['register_reason_extra'] =  request.POST['reason_extra']
             request.session['register_product'] =  request.POST['product']
             request.session['register_quantity'] =  request.POST['quantity']
             request.session['register_number_packager'] =  request.POST['number_packager']
-            request.session['register_sku'] =  request.POST['sku']
-            request.session['register_date_return'] =  request.POST['date_return']
-            request.session['register_state_return '] =  request.POST['state_return']
-            request.session['register_state_extra'] =  request.POST['state_extra']
             request.session['register_created_by'] =  request.POST['created_by']
 
 
@@ -368,9 +355,6 @@ def newIorder(request):
                 ticket_number = request.POST['ticket_number'],
                 type_order = request.POST['type_order'],
                 state = StateDelivery.objects.create(
-                    beetrack_state = request.POST['beetrack_state'],
-                    beetrack_substate = request.POST['beetrack_substate'],
-                    beetrack_comment = request.POST['beetrack_comment'],
                     dev_state = request.POST['dev_state'], 
                     dev_comment = request.POST['dev_comment'],
                     dev_reason  = request.POST['dev_reason'],
@@ -379,7 +363,6 @@ def newIorder(request):
                 product = request.POST['product'],
                 quantity  = request.POST['quantity'],
                 number_packager = request.POST['number_packager'],
-                sku = request.POST['sku'],
                 created_by  = User.objects.get(id=request.POST['created_by']),
                 record = my_list
             )
@@ -392,7 +375,6 @@ def newIorder(request):
         return render(request, 'devolucion_ingreso.html',context)
 
 @login_required
-@val_admin
 def dataInversa(request):
     context = {
         'orders': DeliveryOrder.objects.all()
@@ -401,7 +383,6 @@ def dataInversa(request):
     return render(request, 'devolucion_data.html',context)
 
 @login_required
-@val_admin
 def guideOrder(request,id):
     context = {
         'order': DeliveryOrder.objects.get(id=id)
@@ -410,7 +391,6 @@ def guideOrder(request,id):
 
 
 @login_required
-@val_admin
 def guideOrderEdit(request,id):
 
 
