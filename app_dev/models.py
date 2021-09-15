@@ -205,9 +205,19 @@ class StateDelivery(models.Model):
 
 class DeliveryOrderManager(models.Manager):
     def validador_basico(self, postData):
+        EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+        SOLO_LETRAS = re.compile(r'^[a-zA-Z. ]+$')
+        SOLO_NUMEROS = re.compile(r'^[1-9][0-9]?$|^100$')
+        NO_VACIO = re.compile(r'^$')
 
         errors = {}
 
+        if not SOLO_NUMEROS.match(postData['quantity']):
+            errors['quantity'] = "No ingreso un numero valido en Cantidad"
+
+        if not SOLO_NUMEROS.match(postData['number_packager']):
+            errors['number_packager'] = "No ingreso un numero valido en Bultos"
+        
 
         return errors
 
