@@ -122,27 +122,6 @@
                             <option value="Re-ingreso">Re-ingreso</option>
                         </select>
 
-                        <label for=""> Estado Beetrack</label>
-                        <select class="custom-select my-1 mr-sm-2" name="beetrack_state"
-                            value="{{request.session.register_state}}">
-                            {% for value,text in states %}
-                            <option value="{{value}}">{{text}}</option>
-                            {% endfor %}
-                        </select>
-
-
-                        <label for=""> Sub-Estado Beetrack</label>
-                        <select class="custom-select my-1 mr-sm-2" name="beetrack_substate"
-                            value="{{request.session.register_sub_state}}">
-                            {% for value,text in subStates %}
-                            <option value="{{value}}">{{text}}</option>
-                            {% endfor %}
-                        </select>
-
-                        <div class="form-group">
-                            <input type="text" class="form-input" name="beetrack_comment" placeholder="Comentario Beetrack"
-                                value="{{request.session.register_comment}}" />
-                        </div>
                         <br>
                         <label for=""> Motivo Devolucion </label>
                         <select class="custom-select my-1 mr-sm-2" name="dev_reason"
@@ -169,7 +148,7 @@
 
                         <div class="form-group">
                             <input type="number" class="form-input" name="quantity" placeholder="Cantidad"
-                                value="{{request.session.register_quantity}}" />
+                                value="{{request.session.register_quantity}}"  />
                         </div>
 
 
@@ -178,11 +157,6 @@
                                 placeholder="Cantidad de Bultos" value="{{request.session.register_number_packager}}" />
                         </div>
 
-
-                        <div class="form-group">
-                            <input type="text" class="form-input" name="sku" placeholder="PLU / SKU"
-                                value="{{request.session.register_sku}}" />
-                        </div>
 
 
                         <label for=""> Estado Movimiento de Devolución  </label>
@@ -210,8 +184,14 @@
                             <input type="submit" name="submit" id="submit" class="form-submit" value="CREAR" />
                         </div>
                     </form>
-                    <p class="loginhere">
-                         <a href="/inversa/data" class="loginhere-link">Ver Resumen de Devoluciones</a>
+                    <p class="loginhere text-center">
+                        <ul> 
+                            <li> <a href="/inversa/data" class="loginhere-link">Ver Resumen de Devoluciones General</a></li>
+                            <li> <a href="/bodega/temuco/data/devolucion" class="loginhere-link">Ver Resumen de Devoluciones Temuco</a></li>
+                            <li> <a href="/bodega/osorno/data/devolucion" class="loginhere-link">Ver Resumen de Devoluciones Osorno</a></li>
+                            <li> <a href="/bodega/puerto-montt/data/devolucion" class="loginhere-link">Ver Resumen de Devoluciones Puerto Montt</a></li>
+                        </ul>
+
                     </p>
                 </div>
             </div>
