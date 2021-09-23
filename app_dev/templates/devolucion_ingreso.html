@@ -115,11 +115,12 @@
                                 value="{{request.session.register_ticket_number}}" />
                         </div>
 
-                        <label for=""> Tipor de Devolucion</label>
+                        <label for=""> Tipo de Devolucion</label>
                         <select class="custom-select my-1 mr-sm-2" name="type_order"
                             value="{{request.session.register_type_order}}">
-                            <option value="Retiro">Retiro</option>
-                            <option value="Re-ingreso">Re-ingreso</option>
+                            {% for value,text in returnType %}
+                            <option value="{{value}}">{{text}}</option>
+                            {% endfor %}
                         </select>
 
                         <br>
@@ -132,7 +133,7 @@
                         </select>
 
 
-                        <label for=""> Condicion Devolucion </label>
+                        <label for=""> Condicion Devolucion (Aplica solo a Retiros) </label>
                         <select class="custom-select my-1 mr-sm-2" name="dev_condition"
                             value="{{request.session.register_reason_extra}}">
                             {% for value,text in conditions %}
