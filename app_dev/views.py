@@ -288,7 +288,8 @@ def newIorder(request):
         'subStates':sub_state,
         'reasons':reason,
         'conditions':condition,
-        'devStates':dev_state
+        'devStates':dev_state,
+        'returnType': return_type
     }
 
     if request.method == "POST":
