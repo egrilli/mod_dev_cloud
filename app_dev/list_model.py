@@ -13,6 +13,15 @@ state = [
 ]
 
 
+return_type = [
+    ('Retiro','Retiro'),
+    ('Anulacion','Anulacion'),
+    ('Rechazo','Rechazo'),
+    ('Re-ingreso a CD','Re-ingreso a CD')
+
+]
+
+
 sub_state = [
     ('Conforme','Conforme'),
     ('Domicilio sin moradores','Domicilio sin moradores'),
