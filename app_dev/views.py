@@ -299,7 +299,6 @@ def newIorder(request):
                 messages.error(request, value)
 
             request.session['register_company'] =  request.POST['company_delivery']
-            request.session['register_warehouse_delivery'] =  request.POST['warehouse_delivery']
             request.session['register_warehouse_origin'] =  request.POST['warehouse_origin']
             request.session['register_date_issue'] =  request.POST['date_issue']
             request.session['register_origin_order'] =  request.POST['origin_order']
@@ -314,7 +313,6 @@ def newIorder(request):
 
         else:
             request.session['register_company'] =  ""
-            request.session['register_warehouse_delivery'] =  ""
             request.session['register_warehouse_origin'] =   ""
             request.session['register_date_issue'] =   ""
             request.session['register_origin_order'] =   ""
@@ -339,7 +337,7 @@ def newIorder(request):
             dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
             registro = {'Estado Retorno':  request.POST['dev_state'] ,
                         'Comentario': request.POST['dev_comment'] , 
-                        'Bodega Fisica': request.POST['warehouse_delivery'],
+                        'Bodega Fisica': "",
                         'Fecha Actualizacion': dt_string
                         }
 
@@ -348,7 +346,6 @@ def newIorder(request):
 
             new_iorder = DeliveryOrder.objects.create(
                 company_delivery  = Company.objects.get(id=request.POST['company_delivery']),
-                warehouse_delivery  = Warehouse.objects.get(id=request.POST['warehouse_delivery']),
                 warehouse_origin= request.POST['warehouse_origin'],
                 date_issue = request.POST['date_issue'],
                 origin_order = request.POST['origin_order'],
