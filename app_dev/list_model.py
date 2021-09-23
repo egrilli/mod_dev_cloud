@@ -57,7 +57,6 @@ dev_state = [
     ('Pendiente de Ruta (Estado base inicial)','Pendiente de Ruta (Estado base inicial)'),
     ('Sologo Guia - Cliente Desiste de Retiro','Sologo Guia - Cliente Desiste de Retiro'),
     ('Solo Guia - Rechazo no cumple condicion','Solo Guia - Rechazo no cumple condicion'),
-    ('En Bodega CT Sucursal','En Bodega CT Sucursal'),
     ('En Bodega CT Temuco','En Bodega CT Temuco'),
     ('En Bodega CT Osorno','En Bodega CT Osorno'),
     ('En Bodega CT Puerto Montt','En Bodega CT Puerto Montt'),
