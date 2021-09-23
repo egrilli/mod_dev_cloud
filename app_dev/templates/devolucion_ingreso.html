@@ -74,13 +74,6 @@
                             <option value="{{company.id}}">{{company.name}}</option>
                             {% endfor %}
                         </select>
-                        <label for=""> Sucursal Producto Fisico </label>
-                        <select class="custom-select my-1 mr-sm-2" name="warehouse_delivery"
-                            value="{{request.session.register_warehouse_delivery}}">
-                            {% for warehouse in warehouses %}
-                            <option value="{{warehouse.id}}">{{warehouse.name}}</option>
-                            {% endfor %}
-                        </select>
 
                         <label for=""> Sucursal Origen </label>
                         <select class="custom-select my-1 mr-sm-2" name="warehouse_origin"
@@ -97,19 +90,20 @@
                                 value="{{request.session.register_date_issue}}" required />
                         </div>
 
+                        <label for="">Nº Guia</label>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="order_number" placeholder=" Nº Guia"
+                                value="{{request.session.register_order_number}}" />
+                        </div>
 
-
+                        <label for=""> Nº Guia de Entrega Origen </label>
                         <div class="form-group">
                             <input type="text" class="form-input" name="origin_order"
                                 placeholder=" Nº Guia de Entrega Origen "
                                 value="{{request.session.register_origin_order}}" />
                         </div>
 
-                        <div class="form-group">
-                            <input type="text" class="form-input" name="order_number" placeholder=" Nº Guia"
-                                value="{{request.session.register_order_number}}" />
-                        </div>
-
+                        <label for="">Nº de Boleta</label>
                         <div class="form-group">
                             <input type="text" class="form-input" name="ticket_number" placeholder="Nº de Boleta"
                                 value="{{request.session.register_ticket_number}}" />
