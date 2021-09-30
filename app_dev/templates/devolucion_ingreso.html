@@ -157,9 +157,8 @@
                         <label for=""> Estado Movimiento de Devolución  </label>
                         <select class="custom-select my-1 mr-sm-2" name="dev_state"
                             value="{{request.session.register_state_return}}">
-                            {% for value,text in devStates %}
-                            <option value="{{value}}">{{text}}</option>
-                            {% endfor %}
+                            <option value="Pendiente de Ruta( Estado Base Inicial)">Pendiente de Ruta( Estado Base Inicial)</option>
+                           
                         </select>
 
                         <div class="form-group">
