@@ -64,11 +64,12 @@ condition = [
 
 dev_state = [
     ('Pendiente de Ruta (Estado base inicial)','Pendiente de Ruta (Estado base inicial)'),
-    ('Sologo Guia - Cliente Desiste de Retiro','Sologo Guia - Cliente Desiste de Retiro'),
+    ('Solo Guia - Cliente Desiste de Retiro','Sologo Guia - Cliente Desiste de Retiro'),
     ('Solo Guia - Rechazo no cumple condicion','Solo Guia - Rechazo no cumple condicion'),
     ('En Bodega CT Temuco','En Bodega CT Temuco'),
     ('En Bodega CT Osorno','En Bodega CT Osorno'),
     ('En Bodega CT Puerto Montt','En Bodega CT Puerto Montt'),
+    ('Enviado a CT Temuco','Enviado a CT Temuco'),
     ('En Reparacion','En Reparacion'),
     ('Enviado a CD','Enviado a CD'),
     ('Aceptado CD - Cerrado','Aceptado CD - Cerrado'),
