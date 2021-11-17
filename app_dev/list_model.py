@@ -55,11 +55,12 @@ reason = [
 
 
 condition = [
-    ('Embalaje Completo Px Noble','Embalaje Completo Px Noble'),
-    ('Emalaje Incompleto Px Noble','Emalaje Incompleto Px Noble'),
-    ('Sin Embalaje Px Noble','Sin Embalaje Px Noble'),
-    ('Estado Px a todo evento','Estado Px a todo evento'),
-    ('No Aplica','No Aplica')
+    ('Retirar -  PRODUCTO DEBE ESTA NOBLE SIN ABRIR EMBALAJE IMPECABLE','Retirar -  PRODUCTO DEBE ESTA NOBLE SIN ABRIR EMBALAJE IMPECABLE'),
+    ('Retirar - PRODUCTO ESTA SIN USO, PERFECTO ESTADO Y SU EMBALAJE ORIGINAL Y APTO PARA TRANSPORTAR','Retirar - PRODUCTO ESTA SIN USO, PERFECTO ESTADO Y SU EMBALAJE ORIGINAL Y APTO PARA TRANSPORTAR'),
+    ('Retirar -  PRODUCTO DAÑADO, PERO DEBE ESTAR CON SU EMBALAJE ORIGINAL Y APTO PARA TRASPORTAR','Retirar -  PRODUCTO DAÑADO, PERO DEBE ESTAR CON SU EMBALAJE ORIGINAL Y APTO PARA TRASPORTAR'),
+    ('No Retirar - TOMAR FOTOS E INDICAR EN GUÍA Y BEETRACK QUE RETIRO NO CUMPLE CONDICIÓN POR','No Retirar - TOMAR FOTOS E INDICAR EN GUÍA Y BEETRACK QUE RETIRO NO CUMPLE CONDICIÓN POR'),
+    ('Retirar a todo Evento -  DECISIÓN COMERCIAL','Retirar a todo Evento -  DECISIÓN COMERCIAL'),
+    ('Retirar a todo Evento -  INFORME TÉCNICO','Retirar a todo Evento -  INFORME TÉCNICO')
 ]
 
 dev_state = [
