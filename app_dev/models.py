@@ -184,14 +184,14 @@ class StateDeliveryManager(models.Manager):
 class StateDelivery(models.Model):
 
 
-    beetrack_state = models.CharField(max_length=70, choices=state, default="Inicial")
-    beetrack_substate  = models.CharField(max_length=70, choices=sub_state, default="Inicial")
+    beetrack_state = models.CharField(max_length=200, choices=state, default="Inicial")
+    beetrack_substate  = models.CharField(max_length=200, choices=sub_state, default="Inicial")
     beetrack_comment = models.TextField()
     date_return = models.DateField( blank=True, null=True, default="2021-01-01")
-    dev_state = models.CharField(max_length=70, choices=sub_state, default="Inicial")
+    dev_state = models.CharField(max_length=200, choices=sub_state, default="Inicial")
     dev_comment = models.TextField()
-    dev_reason  = models.CharField(max_length=70, choices=reason, default="Inicial")
-    dev_condition  = models.CharField(max_length=70, choices=condition, default="Inicial")
+    dev_reason  = models.CharField(max_length=200, choices=reason, default="Inicial")
+    dev_condition  = models.CharField(max_length=200, choices=condition, default="Inicial")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = StateDeliveryManager()
